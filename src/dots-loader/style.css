@@ -1,0 +1,59 @@
+@keyframes dot {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: .25;
+		transform: scale(.75);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.dots--box {
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dots--container {
+	width: 120px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dots--loader {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #ccc;
+}
+
+.dots--loader--one {
+	animation: dot .4s ease 0s infinite alternate;
+}
+.dots--loader--two {
+	animation: dot .4s ease .2s infinite alternate;
+}
+.dots--loader--three {
+	animation: dot .4s ease .4s infinite alternate;
+}

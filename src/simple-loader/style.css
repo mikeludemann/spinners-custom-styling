@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 400px;
+	width: 600px;
+	background: transparent;
+	display: grid;
+	grid-template-rows: 50px 1fr;
+}
+
+.container--box {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.container--box .box {
+	display: grid;
+	width: 100px;
+	height: 100px;
+	justify-items: center;
+	align-items: center;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.container--box .box .spinner {
+	height: 40px;
+	width: 40px;
+	background: rgba(0, 0, 0, .2);
+	border-radius: 50%;
+}
+
+.container--box .box .spinner--first {
+	border-top: 2px solid #fff;
+	animation: spinner--one 600ms linear infinite;
+}
+
+@keyframes spinner--one {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.container--box .box .spinner--second {
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	border-top-color: #fff;
+	animation: spinner--two 600ms linear infinite;
+}
+
+@keyframes spinner--two {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.container--box .box .spinner--third {
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	border-bottom-color: #fff;
+	border-top-color: #fff;
+	animation: spinner--three 800ms ease infinite;
+}
+
+@keyframes spinner--three {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.container--box .box .spinner--fourth {
+	transform: scale(0);
+	background: rgba(0, 0, 0, .8);
+	opacity: 1;
+	animation: spinner--four 800ms linear infinite;
+}
+@keyframes spinner--four {
+	to {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+.container--box .box .spinner--fivth {
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	animation: spinner--five 800ms linear infinite;
+}
+
+@keyframes spinner--five {
+	0% {
+		border-radius: 50%;
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(180deg);
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	100% {
+		border-radius: 50%;
+		transform: rotate(360deg);
+	}
+}
+
+.container--box .box .spinner--sixth {
+	border-top: 2px solid #fff;
+	border-right: 2px solid transparent;
+	animation: spinner--six 700ms linear infinite;
+}
+
+@keyframes spinner--six {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
